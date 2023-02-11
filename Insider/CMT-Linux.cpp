@@ -262,7 +262,7 @@ void A()
 {
     system("clear"); //清屏
     char o;
-    long double num1, num2;
+    long int num1, num2;
     string select[]={"加（+）","减（-）","乘（*）","除（/）","乘方(^)","退出"};
     string str=">";
     //局域变量部分
@@ -332,7 +332,7 @@ void A()
                 if (num1 == num2 == 0)
                     cout << "\033[37;1;43m注意\033[0m：不成立！" << endl;
                 else
-                    cout << num1 << "的" << num2 << "次方为" << num1 ^num2 << endl;
+                    cout << num1 << "的" << num2 << "次方为" << num1^num2 << "/n";
             }
             if(o == 'c' || o == 'C')
             	break;
