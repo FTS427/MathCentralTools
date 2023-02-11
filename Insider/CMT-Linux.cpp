@@ -391,6 +391,8 @@ void B()
 void C()
 {
     system("clear");
+    long int n3;
+    long double num5, num6;
     cout << "\033[1;33m欢迎使用最小公倍数功能！\033[0m" << endl;
     cout << "\033[1;43;37m注意\033[0m：本功能只支持两个数之间的运算！" << endl;
     //以上为函数的初始化
@@ -406,8 +408,6 @@ void C()
         else
         {
             cout << "--------------------" << endl;
-            long int n3;
-            long double num5, num6;
             while (1 > 0)
             {
                 //循环体
