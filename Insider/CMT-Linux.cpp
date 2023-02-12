@@ -22,6 +22,7 @@ char ch;
 
 //以上为程序预处理部分,以下是函数部分
 
+/*
 //xy函数,控制光标
 void move(int x, int y)
 {
@@ -29,6 +30,7 @@ void move(int x, int y)
 	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE); // 获取标准输出设备句柄
 	SetConsoleCursorPosition(hOut, pos); //两个参数分别是指定哪个窗体，具体位置
 }
+*/
 
 void print(bool a, int fc, int bc, const char p)
 {
@@ -332,7 +334,8 @@ void A()
                 if (num1 == num2 == 0)
                     cout << "\033[37;1;43m注意\033[0m：不成立！" << endl;
                 else
-                    cout << num1 << "的" << num2 << "次方为" << num1^num2 << "/n";
+                    int n = num1^num2;
+                    cout << num1 << "的" << num2 << "次方为" << n << "/n";
             }
             if(o == 'c' || o == 'C')
             	break;
