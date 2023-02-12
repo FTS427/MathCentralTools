@@ -267,6 +267,7 @@ void A()
     long int num1, num2;
     string select[]={"加（+）","减（-）","乘（*）","除（/）","乘方(^)","退出"};
     string str=">";
+    int n = num1^num2;
     //局域变量部分
     cout << "\033[1;33m欢迎使用计算器功能！\033[0m" << endl;
     cout << "\033[1;37;43m注意\033[0m：本功能只支持两个整数之间的运算！" << endl;
@@ -334,7 +335,7 @@ void A()
                 if (num1 == num2 == 0)
                     cout << "\033[37;1;43m注意\033[0m：不成立！" << endl;
                 else
-                    int n = num1^num2;
+                    
                     cout << num1 << "的" << num2 << "次方为" << n << "/n";
             }
             if(o == 'c' || o == 'C')
