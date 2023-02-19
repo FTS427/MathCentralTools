@@ -15,7 +15,6 @@ using namespace std;
 
 //设置全局变量部分
 char q;
-char ch;
 
 //以上为程序预处理部分,以下是函数部分
 
@@ -33,7 +32,7 @@ void A()
     
 	while (1 > 0)
     {
-        cout << "按下任意键继续，输入“\033[33;1mc\033[0m”退出..." << endl;
+        cout << "输入任意值继续，输入“\033[33;1mc\033[0m”退出..." << endl;
         cin >> q;
         //输入与判断
         if (q == 'c' || q == 'C')
@@ -47,34 +46,34 @@ void A()
             cin >> o;
             if (o == '+')
             {
-                cout << "请输入第一个加数：" << endl;
+                cout << "请输入第一个加数：";
                 cin >> num1;
                 cout << "请输入第二个加数：" << endl;
                 cin >> num2;
                 num3=num1+num2;
                 cout << num1 << "+" << num2 << "=" << num3 << endl;
             }
-            if (o == '-')
+            else if (o == '-')
             {
-                cout << "请输入被减数：" << endl;
+                cout << "请输入被减数：";
                 cin >> num1;
                 cout << "请输入减数：" << endl;
                 cin >> num2;
                 num3=num1+num2;
                 cout << num1 << "-" << num2 << "=" << num3 << endl;
             }
-            if (o == '*')
+            else if (o == '*')
             {
-                cout << "请输入第一个因数（乘数）：" << endl;
+                cout << "请输入第一个因数（乘数）：";
                 cin >> num1;
                 cout << "请输入第二个因数（乘数）：" << endl;
                 cin >> num2;
                 num3=num1*num2;
                 cout << num1 << "*" << num2 << "=" << num3 << endl;
             }
-            if (o == '/')
+            else if (o == '/')
             {
-                cout << "请输入被除数：" << endl;
+                cout << "请输入被除数：";
                 cin >> num1;
                 cout << "请输入除数：" << endl;
                 cin >> num2;
@@ -88,20 +87,20 @@ void A()
                     cout << num1 << "/" << num2 << "=" << num3 << endl;
                 }
             }
-            if (o == '^')
+            else if (o == '^')
             {
-                cout << "请输入底数：" << endl;
+                cout << "请输入底数：";
                 cin >> num1;
                 cout << "请输入指数：" << endl;
                 cin >> num2;
                 num3=num1^num2;
                 cout << num1 << "^" << num2 << "=" << num3 << endl;
             }
-            if(o == 'c' || o == 'C')
+            else if(o == 'c' || o == 'C')
             {
             	break;
             }
-            if(o != '+' || o != '-' || o != '*' || o != '/' || o != 'c' || o != 'C')
+            else
             {
 				system("clear");
 				cout << "\033[37;43;1m注意\033[0m：请输入正确符号！" << endl;
