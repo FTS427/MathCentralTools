@@ -15,27 +15,17 @@ using namespace std;
 
 //设置全局变量部分
 char q;
-int index = 0;
 char ch;
 
 //以上为程序预处理部分,以下是函数部分
-
-//xy函数,控制光标
-void move(int x, int y)
-{
-	COORD pos = {x,y};
-	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE); // 获取标准输出设备句柄
-	SetConsoleCursorPosition(hOut, pos); //两个参数分别是指定哪个窗体，具体位置
-}
 
 //A函数,计算器
 void A()
 {
     system("clear"); //清屏
     char o;
-    long double num1, num2;
-    string select[]={"加（+）","减（-）","乘（*）","除（/）","退出"};
-    string str=">";
+    long int num1, num2;
+    long double num3;
     //局域变量部分
     cout << "\033[1;33m欢迎使用计算器功能！\033[0m" << endl;
     cout << "\033[1;37;43m注意\033[0m：本功能只支持两个数之间的运算！" << endl;
@@ -53,7 +43,7 @@ void A()
         else
         {
             cout << "--------------------" << endl;
-            cout << "请选择你需要的运算（加：+，减：-，乘：*，除：/）：" << endl;
+            cout << "请选择你需要的运算（加：+，减：-，乘：*，除：/，乘方：^）：" << endl;
             cin >> o;
             if (o == '+')
             {
@@ -61,7 +51,8 @@ void A()
                 cin >> num1;
                 cout << "请输入第二个加数：" << endl;
                 cin >> num2;
-                cout << num1 << "和" << num2 << "的和为" << num1 + num2 << endl;
+                num3=num1+num2;
+                cout << num1 << "+" << num2 << "=" << num3 << endl;
             }
             if (o == '-')
             {
@@ -69,7 +60,8 @@ void A()
                 cin >> num1;
                 cout << "请输入减数：" << endl;
                 cin >> num2;
-                cout << num1 << "和" << num2 << "的差为" << num1 - num2 << endl;
+                num3=num1+num2;
+                cout << num1 << "-" << num2 << "=" << num3 << endl;
             }
             if (o == '*')
             {
@@ -77,7 +69,8 @@ void A()
                 cin >> num1;
                 cout << "请输入第二个因数（乘数）：" << endl;
                 cin >> num2;
-                cout << num1 << "和" << num2 << "的乘积为" << num1 * num2 << endl;
+                num3=num1*num2;
+                cout << num1 << "*" << num2 << "=" << num3 << endl;
             }
             if (o == '/')
             {
@@ -91,8 +84,18 @@ void A()
                 }
                 else
                 {
-                	cout << num1 << "和" << num2 << "的商为" << num1 / num2 << endl;
+                	num3=num1/num2;
+                    cout << num1 << "/" << num2 << "=" << num3 << endl;
                 }
+            }
+            if (o == '^')
+            {
+                cout << "请输入底数：" << endl;
+                cin >> num1;
+                cout << "请输入指数：" << endl;
+                cin >> num2;
+                num3=num1^num2;
+                cout << num1 << "^" << num2 << "=" << num3 << endl;
             }
             if(o == 'c' || o == 'C')
             {
@@ -214,7 +217,7 @@ void C()
 //D函数,数值分析器
 void D()
 {
-    system("clear"); //祖传清屏
+    system("clear");
     long double x; //输入的数
     cout << "欢迎使用数值分析器功能！" << endl;
     //以上为函数初始化
