@@ -23,4 +23,4 @@
 
 ### 外部链接
 
-[我的小破站链接](https://space.bilibili.com/1978537245?spm_id_from=333.1007.0.0)("一个视频都没发过。。。")
+[我的小破站链接](https://space.bilibili.com/1978537245?spm_id_from=333.1007.0.0"一个视频都没发过。。。")
