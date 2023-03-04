@@ -15,12 +15,9 @@
 
 ### 编写人员
 
-[FTS427](https://github.com/FTS427)("本人初二学生一枚，更新较慢，程序功能较少，请见谅。您如果愿意加入我或者有问题，可电邮：FTS427@outlook.com")
+[FTS427](https://github.com/FTS427)
+注：本人初二学生一枚，更新较慢，程序功能较少，请见谅。您如果愿意加入我或者有问题，可电邮：FTS427@outlook.com"
 
 ### 一些废话
 
-可以关注我的B站账号：探索者FTS
-
-### 外部链接
-
-[我的小破站链接](https://space.bilibili.com/1978537245?spm_id_from=333.1007.0.0"一个视频都没发过。。。")
+可以关注我的B站账号：[探索者FTS](https://space.bilibili.com/1978537245?spm_id_from=333.1007.0.0)
