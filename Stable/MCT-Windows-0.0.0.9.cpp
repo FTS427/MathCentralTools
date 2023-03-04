@@ -93,7 +93,19 @@ void A()
                 cin >> num1;
                 cout << "请输入指数：" << endl;
                 cin >> num2;
-                num3=num1^num2;
+                if (num2 == 0)
+                {
+                    num3 =1;
+                }
+                else
+                {
+                    while (num2 > 0)
+                    {
+                        num1 = num3;
+                        num3 * num1;
+                        num2-1;
+                    }
+                }
                 cout << num1 << "^" << num2 << "=" << num3 << endl;
             }
             else if(o == 'c' || o == 'C')
