@@ -8,6 +8,7 @@
 
 //头文件
 #include <iostream>
+#include <cmath>
 
 //使用“std”命名空间
 using namespace std;
@@ -305,7 +306,7 @@ void D()
 //setting函数,用于设置
 void setting()
 {
-    system("clear");
+    clear();
     cout << "设置" << endl;cout << endl;
     cout << "全局语言：" << endl;
 }
