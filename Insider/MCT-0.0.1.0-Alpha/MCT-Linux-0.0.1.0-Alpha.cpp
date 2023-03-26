@@ -56,7 +56,7 @@ void calc()
             cin >> num1;
             cout << "请输入减数：" << endl;
             cin >> num2;
-            num3=num1+num2;
+            num3=num1-num2;
             cout << num1 << "-" << num2 << "=" << num3 << endl;
         }
         else if (o == '*')
@@ -82,29 +82,10 @@ void calc()
                 cout << num1 << "/" << num2 << "=" << num3 << endl;
             }
         }
-        else if (o == '^')
-        {
-            cout << "请输入底数：";
-            cin >> num1;
-            cout << "请输入指数：" << endl;
-            cin >> num2;
-            if (num1 == 0 && num2 == 0)
-            cout << "\033[37;43;1m注意\033[0m：计算不成立！" << endl;
-            else if (num2 == 0)
-            {
-                num3 =1;
-            }
-            else
-            {
-                while (num2 > 0)
-                {
-                    num1 = num3;
-                    num3 * num1;
-                    num2-1;
-                }
-            }
-            cout << num1 << "^" << num2 << "=" << num3 << endl;
-        }
+        else if (o == '^') 
+        { 
+            cout << "请输入底数："; 
+            cin >> num1; cout << "请输入指数：" << endl; cin >> num2; if (num1 == 0 && num2 == 0) cout << "\033[37;43;1m注意\033[0m：计算不成立！" << endl; else { num3 = 1; while (num2 > 0) { num3 *= num1; num2--; } } cout << num1 << "^" << num2 << "=" << num3 << endl; }
         else if(o == 'c' || o == 'C')
         {
             break;
