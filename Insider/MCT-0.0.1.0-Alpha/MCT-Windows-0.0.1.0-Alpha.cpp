@@ -8,6 +8,7 @@
 
 //头文件
 #include <iostream>
+#include <cmath>
 
 //使用“std”命名空间
 using namespace std;
