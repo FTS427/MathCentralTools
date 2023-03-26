@@ -18,8 +18,8 @@ char q;
 
 //以上为程序预处理部分,以下是函数部分
 
-//A函数,计算器
-void A()
+//calc函数,计算器
+void calc()
 {
     system("clear"); //清屏
     char o;
