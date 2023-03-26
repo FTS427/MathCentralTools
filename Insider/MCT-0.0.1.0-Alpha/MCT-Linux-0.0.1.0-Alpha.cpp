@@ -41,6 +41,7 @@ void calc()
         cout << "--------------------" << endl;
         cout << "请选择你需要的运算（加：+，减：-，乘：*，除：/，乘方：^，退出：c）：" << endl;
         cin >> o;
+        //加法模块
         if (o == '+')
         {
             cout << "请输入第一个加数：";
@@ -50,6 +51,7 @@ void calc()
             num3=num1+num2;
             cout << num1 << "+" << num2 << "=" << num3 << endl;
         }
+        //减法模块
         else if (o == '-')
         {
             cout << "请输入被减数：";
@@ -59,6 +61,7 @@ void calc()
             num3=num1-num2;
             cout << num1 << "-" << num2 << "=" << num3 << endl;
         }
+        //乘法模块
         else if (o == '*')
         {
             cout << "请输入第一个因数（乘数）：";
@@ -68,6 +71,7 @@ void calc()
             num3=num1*num2;
             cout << num1 << "*" << num2 << "=" << num3 << endl;
         }
+        //除法模块
         else if (o == '/')
         {
             cout << "请输入被除数：";
@@ -82,6 +86,7 @@ void calc()
                 cout << num1 << "/" << num2 << "=" << num3 << endl;
             }
         }
+        //乘方模块
         else if (o == '^') 
         { 
             cout << "请输入底数："; 
@@ -101,10 +106,10 @@ void calc()
             } 
             cout << num1 << "^" << num2 << "=" << num3 << endl; 
         }
+        //退出模块
         else if(o == 'c' || o == 'C')
-        {
-            break;
-        }
+        break;
+        //报错模块
         else
         {
 			clear();
@@ -116,42 +121,30 @@ void calc()
 //B函数,用于计算最大公约数
 void B()
 {
-    system("clear");
+    clear();
     long double num3, num4;
     cout << "欢迎使用最大公约数功能！" << endl;
     cout << "\033[1;43;37m注意\033[0m：本功能只支持两个数之间的运算！" << endl;
     //初始化部分
-    
-	while (1 > 0)
+    cout << "按下任意键继续，按下“\033[1;33mc\033[0m”退出..." << endl;
+    cin >> q;
+    while (q != 'c' || q != 'C')
     {
-        //功能循环
-        cout << "按下任意键继续，按下“\033[1;33mc\033[0m”退出..." << endl;
         cout << "--------------------" << endl;
-        cin >> q;
-        if (q == 'c' || q == 'C')
+        cout << "请输入第一个数" << endl;
+        cin >> num3;
+        cout << "请输入第二个数" << endl;
+        cin >> num4;
+        num3 = abs(num3);
+        num4 = abs(num4);
+        while (num3 != num4)
         {
-            break;
+            if (num3 > num4)
+            num3 -= num4;
+            else
+            num4 -= num3;
         }
-        else
-        {
-            cout << "请输入第一个数" << endl;
-            cin >> num3;
-            cout << "请输入第二个数" << endl;
-            cin >> num4;
-            while (num3 != num4)
-            {
-                //运算循环
-                if (num3 > num4)
-                {
-                    num3 -= num4;
-                }
-                else
-                {
-                    num4 -= num3;
-                }
-            }
-            cout << "这两个数的的最大公约数是: " << num3 << endl;
-        }
+        cout << "这两个数的的最大公约数是: " << num3 + num4 << endl;
     }
 }
 
