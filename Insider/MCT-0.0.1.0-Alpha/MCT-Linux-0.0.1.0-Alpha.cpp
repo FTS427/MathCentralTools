@@ -18,10 +18,15 @@ char q;
 
 //以上为程序预处理部分,以下是函数部分
 
+void clear()
+{
+    system("clear");
+}
+
 //calc函数,计算器
 void calc()
 {
-    system("clear"); //清屏
+    clear();
     char o;
     long int num1, num2;
     long double num3;
@@ -29,96 +34,87 @@ void calc()
     cout << "\033[1;33m欢迎使用计算器功能！\033[0m" << endl;
     cout << "\033[1;37;43m注意\033[0m：本功能只支持两个数之间的运算！" << endl;
     //函数预处理
-    
-	while (1 > 0)
+    cout << "输入任意值继续，输入“\033[33;1mc\033[0m”退出..." << endl;
+    cin >> q;
+	while (q == 'c' || q == 'C')
     {
-        cout << "输入任意值继续，输入“\033[33;1mc\033[0m”退出..." << endl;
-        cin >> q;
-        //输入与判断
-        if (q == 'c' || q == 'C')
+        cout << "--------------------" << endl;
+        cout << "请选择你需要的运算（加：+，减：-，乘：*，除：/，乘方：^，退出：c）：" << endl;
+        cin >> o;
+        if (o == '+')
+        {
+            cout << "请输入第一个加数：";
+            cin >> num1;
+            cout << "请输入第二个加数：" << endl;
+            cin >> num2;
+            num3=num1+num2;
+            cout << num1 << "+" << num2 << "=" << num3 << endl;
+        }
+        else if (o == '-')
+        {
+            cout << "请输入被减数：";
+            cin >> num1;
+            cout << "请输入减数：" << endl;
+            cin >> num2;
+            num3=num1+num2;
+            cout << num1 << "-" << num2 << "=" << num3 << endl;
+        }
+        else if (o == '*')
+        {
+            cout << "请输入第一个因数（乘数）：";
+            cin >> num1;
+            cout << "请输入第二个因数（乘数）：" << endl;
+            cin >> num2;
+            num3=num1*num2;
+            cout << num1 << "*" << num2 << "=" << num3 << endl;
+        }
+        else if (o == '/')
+        {
+            cout << "请输入被除数：";
+            cin >> num1;
+            cout << "请输入除数：" << endl;
+            cin >> num2;
+            if (num2 == 0)
+            cout << "\033[37;1;43m注意\033[0m：计算不成立！" << endl;
+            else
+            {
+                num3=num1/num2;
+                cout << num1 << "/" << num2 << "=" << num3 << endl;
+            }
+        }
+        else if (o == '^')
+        {
+            cout << "请输入底数：";
+            cin >> num1;
+            cout << "请输入指数：" << endl;
+            cin >> num2;
+            if (num1 == 0 && num2 == 0)
+            cout << "\033[37;43;1m注意\033[0m：计算不成立！" << endl;
+            else if (num2 == 0)
+            {
+                num3 =1;
+            }
+            else
+            {
+                while (num2 > 0)
+                {
+                    num1 = num3;
+                    num3 * num1;
+                    num2-1;
+                }
+            }
+            cout << num1 << "^" << num2 << "=" << num3 << endl;
+        }
+        else if(o == 'c' || o == 'C')
         {
             break;
         }
         else
         {
-            cout << "--------------------" << endl;
-            cout << "请选择你需要的运算（加：+，减：-，乘：*，除：/，乘方：^）：" << endl;
-            cin >> o;
-            if (o == '+')
-            {
-                cout << "请输入第一个加数：";
-                cin >> num1;
-                cout << "请输入第二个加数：" << endl;
-                cin >> num2;
-                num3=num1+num2;
-                cout << num1 << "+" << num2 << "=" << num3 << endl;
-            }
-            else if (o == '-')
-            {
-                cout << "请输入被减数：";
-                cin >> num1;
-                cout << "请输入减数：" << endl;
-                cin >> num2;
-                num3=num1+num2;
-                cout << num1 << "-" << num2 << "=" << num3 << endl;
-            }
-            else if (o == '*')
-            {
-                cout << "请输入第一个因数（乘数）：";
-                cin >> num1;
-                cout << "请输入第二个因数（乘数）：" << endl;
-                cin >> num2;
-                num3=num1*num2;
-                cout << num1 << "*" << num2 << "=" << num3 << endl;
-            }
-            else if (o == '/')
-            {
-                cout << "请输入被除数：";
-                cin >> num1;
-                cout << "请输入除数：" << endl;
-                cin >> num2;
-                if (num2 == 0)
-                {
-                	cout << "\033[37;1;43m注意\033[0m：除数不可为0！" << endl;
-                }
-                else
-                {
-                	num3=num1/num2;
-                    cout << num1 << "/" << num2 << "=" << num3 << endl;
-                }
-            }
-            else if (o == '^')
-            {
-                cout << "请输入底数：";
-                cin >> num1;
-                cout << "请输入指数：" << endl;
-                cin >> num2;
-                if (num2 == 0)
-                {
-                    num3 =1;
-                }
-                else
-                {
-                    while (num2 > 0)
-                    {
-                        num1 = num3;
-                        num3 * num1;
-                        num2-1;
-                    }
-                }
-                cout << num1 << "^" << num2 << "=" << num3 << endl;
-            }
-            else if(o == 'c' || o == 'C')
-            {
-            	break;
-            }
-            else
-            {
-				system("clear");
-				cout << "\033[37;43;1m注意\033[0m：请输入正确符号！" << endl;
-            }
-		}
-    }
+			clear();
+			cout << "\033[37;43;1m注意\033[0m：请输入正确符号！" << endl;
+        }
+	}
 }
 
 //B函数,用于计算最大公约数
