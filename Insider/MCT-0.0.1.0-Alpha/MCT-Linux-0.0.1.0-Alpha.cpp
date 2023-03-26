@@ -321,7 +321,14 @@ void D()
     }
 }
 
-//X函数,用于简化主函数,功能是进行判断和分发
+//setting函数,用于设置
+void setting()
+{
+    system("clear");
+    cout << "设置" << endl;cout << endl;
+    cout << "全局语言：" << endl;
+}
+
 void m()
 {
     system("clear"); //清屏
@@ -337,7 +344,7 @@ void m()
         cin >> u; //输入'u'并进行判断
         if (u == '1')
         {
-            A();
+            calc();
         }
         if (u == '2')
         {
@@ -367,6 +374,6 @@ void m()
 //主函数部分
 int main()
 {
-    m(); //使用X函数
+    m(); //使用m函数
     return 0; //向系统报个0值
 }
