@@ -8,7 +8,6 @@
 
 //头文件
 #include <iostream>
-#include <limits>
 
 //使用“std”命名空间
 using namespace std;
@@ -189,7 +188,7 @@ void Ca()
 //C函数,用于计算最小公倍数
 void C()
 {
-    system("clear");
+    clear();
     cout << "\033[1;33m欢迎使用最小公倍数功能！\033[0m" << endl;
     cout << "\033[1;43;37m注意\033[0m：本功能只支持两个数之间的运算！" << endl;
     //以上为函数的初始化
@@ -213,10 +212,11 @@ void C()
 //D函数,数值分析器
 void D()
 {
-    system("clear");
-    long double x; //输入的数
+    clear();
+    long double x;
+    double intpart;
     cout << "欢迎使用数值分析器功能！" << endl;
-    //以上为函数初始化
+    //函数初始化
     while (1 > 0)
     {
         cout << "按下任意键继续，按下“\033[1;33mc\033[0m”退出..." << endl;
@@ -240,14 +240,10 @@ void D()
             }
             else
             {
-                if (int(x) == x)
-                {
-                    cout << x << "是整数" << endl;
-                }
+                if (modf(x, &intpart) == 0.0)
+                cout << x << "是整数" << endl;
                 else
-                {
-                    cout << x << "是分数" << endl;
-                }
+                cout << x << "是分数" << endl;
                 if (x > 0)
                 {
                     cout << x << "是正数" << endl;
