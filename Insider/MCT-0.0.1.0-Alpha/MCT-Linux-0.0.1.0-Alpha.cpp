@@ -331,7 +331,7 @@ void setting()
 
 void m()
 {
-    system("clear"); //清屏
+    system("clear");
     cout << "\033[1;33m欢迎使用集成数学工具!\033[0m" << endl; //输出没有什么用的字
     char u; //定义局部字符变量'u', 判断用的
     
