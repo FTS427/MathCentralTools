@@ -1,26 +1,37 @@
 ﻿/*
 本程序由'FTS427'制作, 如有问题可电邮我: FTS427@outlook.com, 也可以关注我的B站账号 : 探索者FTS
-注意:本程序处于开发阶段,不可用于科学的精密计算!如果出现问题,后果自负.
+注意:本程序不可用于科学的精密计算!如果出现问题,后果自负.
 本程序是免费开源的,此源代码可以随便用.
 我允许任何人使用我的源代码进行扩充,编译等操作.但是一旦出现问题,我个人不承担任何责任.
 注: 本人初二学生一枚,更新较慢,程序功能较少,请见谅.您如果愿意加入我,可电邮: FTS427@outlook.com ,也可以关注我的B站账号 : 探索者FTS
+Github连接：https://github.com/FTS427/MathCentTools
 */
 
-//头文件
 #include <iostream>
 #include <cmath>
-
-//使用“std”命名空间
 using namespace std;
 
 //设置全局变量部分
 char q;
+const char RED[100]{"\033[31m"};
+const char YELLOW[100]{"\033[33m"};
+const char BLUE[100]{"\033[m"};
+const char GREEN[100]{"\033[m"};
+const char TEAL[100]{"\033[m"};
+const char WHITE[100]{"\033[0m"};
 
 //以上为程序预处理部分,以下是函数部分
 
+//clear函数，清屏
 void clear()
 {
     system("clear");
+}
+
+//ERROR函数，报错
+void ERROR()
+{
+	cout << "\033[37;43;1mERROR!\033[0m" << endl;
 }
 
 //calc函数,计算器
@@ -31,8 +42,8 @@ void calc()
     long int num1, num2;
     long double num3;
     //局域变量部分
-    cout << "\033[1;33m欢迎使用计算器功能！\033[0m" << endl;
-    cout << "\033[1;37;43m注意\033[0m：本功能只支持两个数之间的运算！" << endl;
+    cout << "欢迎使用计算器功能！" << endl;
+    cout << "\033[1;37;43m注意\033[0m：现仅只支持两个数之间的运算！" << endl;
     //函数预处理
     cout << "输入任意值继续，输入“\033[33;1mc\033[0m”退出..." << endl;
     cin >> q;
@@ -113,7 +124,7 @@ void calc()
         else
         {
 			clear();
-			cout << "\033[37;43;1m注意\033[0m：请输入正确符号！" << endl;
+			ERROR();
         }
 	}
 }
@@ -161,13 +172,9 @@ void Ca()
         cout << "请输入第二个数:" << endl;
         cin >> num6;
         if (num5 != int(num5) || num6 != int(num6))
-        {
-            cout << "\033[1;33m注意\033[0m：不能含有小数！" << endl;
-        }
+        ERROR();
         else
-        {
-            break;
-        }
+        break;
     }
     // 获取最大的数
     n3 = (num5 > num6) ? num5 : num6;
@@ -180,9 +187,7 @@ void Ca()
             break;
         }
         else
-        {
-            ++n3;
-        }
+		++n3;
     }
 }
 
@@ -199,9 +204,7 @@ void C()
         cout << "按下“\033[33;1mc\033[0m”退出，按下任意键继续..." << endl;
         cin >> q;
         if (q == 'c' || q == 'C')
-        {
-            break;
-        }
+        break;
         else
         {
             cout << "--------------------" << endl;
@@ -223,9 +226,7 @@ void D()
         cout << "按下任意键继续，按下“\033[1;33mc\033[0m”退出..." << endl;
         cin >> q;
         if (q == 'c' || q == 'C')
-        {
-            break;
-        }
+        break;
         else
         {
             cout << "--------------------" << endl;
@@ -246,83 +247,70 @@ void D()
                 else
                 cout << x << "是分数" << endl;
                 if (x > 0)
-                {
-                    cout << x << "是正数" << endl;
-                }
+                cout << x << "是正数" << endl;
                 else
-                {
-                    cout << x << "是负数" << endl;
-                }
+                cout << x << "是负数" << endl;
                 if (x * x >= 0)
-                {
-                    cout << x << "是实数" << endl;
-                }
+                cout << x << "是实数" << endl;
                 else
-                {
-                    cout << x << "是虚数" << endl;
-                }
+                cout << x << "是虚数" << endl;
                 if (x == 1)
-                {
-                    cout << x << "是不分质数合数" << endl;
-                }
+                cout << x << "是不分质数合数" << endl;
                 else
                 {
                     if (int(x) % 3 == 0 || int(x) % 5 == 0 || int(x) % 2 == 0 || int(x) % 7 == 0 || int(x) % 11 == 0)
-                    {
-                        cout << x << "是合数" << endl;
-                    }
+                    cout << x << "是合数" << endl;
                     else
-                    {
-                        cout << x << "是质数" << endl;
-                    }
+                    cout << x << "是质数" << endl;
                 }
                 if (int(x) == x)
                 {
                     if (int(x) % 2 == 0)
-                    {
-                        cout << x << "是偶数" << endl;
-                    }
+                    cout << x << "是偶数" << endl;
                     else
-                    {
-                        cout << x << "是奇数" << endl;
-                    }
+                    cout << x << "是奇数" << endl;
                 }
                 else
                 {
                     if (x/2 - int(x)/2 == 0)
-                    {
-                        cout << x << "是偶数" << endl;
-                    }
+                    cout << x << "是偶数" << endl;
                     else
-                    {
-                        cout << x << "是奇数" << endl;
-                    }
+                    cout << x << "是奇数" << endl;
                 }
             }
         }
     }
 }
 
-//setting函数,用于设置
+/*
+//setting函数,用于设置（测试开发阶段）
 void setting()
 {
     clear();
-    cout << "设置" << endl;cout << endl;
-    cout << "全局语言：" << endl;
+	int a;
+	cout << "设置" << endl;cout << endl;
+    cout << "全局语言" << endl;
+	cout << "English = 1 , 简体中文 = 2";
+	cin >> a;
+	if(a == 1)
+	//设成英文模式
+	if(a == 2)
+	//中文
 }
+*/
 
+//m函数，用于简化主函数
 void m()
 {
-    clear();
     cout << "\033[1;33m欢迎使用集成数学工具!\033[0m" << endl;
     char u;
-	//以上为函数初始化
+	//函数初始化
     while (1 > 0) //主循环
     {
         cout << "--------------------" << endl;
-        cout << "本程序的功能有：\033[34m计算器\033[1;34m(1)\033[0m，\033[35m最大公约数\033[35;1m(2)\033[0m，\033[36m最小公倍数\033[1;36m(3)\033[0m，\033[32m数值分析器\033[1;32m(4)\033[0m" << endl;
-        cout << "请输入你需要的功能（输入“\033[1;33mq\033[0m”退出）：";
-        cin >> u; //输入'u'并进行判断
+        cout << "\033[34m计算器\033[1;34m(1)\033[0m，\033[35m最大公约数\033[35;1m(2)\033[0m，\033[36m最小公倍数\033[1;36m(3)\033[0m，\033[32m数值分析器\033[1;32m(4)，\033[1;33m退出(5)\033[0m" << endl;
+        cout << "请键入你所需的功能：";
+        cin >> u; //输入'u'判断
         if (u == '1')
         calc();
         else if (u == '2')
@@ -331,20 +319,23 @@ void m()
         C();
         else if (u == '4')
         D();
-        else if (u == 'q' || u == 'Q')
-        break;
+		else if (u == '5')
+		break;
+		else if (u == 'v' || u == 'V')
+        cout << "MCT Insider v0.0.1.0-Beta01" << endl;
         else
-        {
+		{
             clear();
-            cout << "\033[1;37;43m注意\033[0m：请输入正确的功能代号（输入“q”退出）！" << endl; //报错
+            ERROR();
         }
     }
-	clear();
 }
 
 //主函数部分
 int main()
 {
-    m(); //使用m函数
-    return 0; //向系统报个0值
+    clear();
+	m(); //使用m函数
+    clear();
+	return 0; //向系统报个0值
 }
