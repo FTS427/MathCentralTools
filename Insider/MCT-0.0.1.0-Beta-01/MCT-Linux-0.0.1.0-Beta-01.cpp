@@ -106,7 +106,8 @@ void calc()
             cin >> num1; 
             cout << "请输入指数：" << endl; 
             cin >> num2; 
-            if (num1 == 0 && num2 == 0) 
+            long int n=num2;
+			if (num1 == 0 && num2 == 0) 
             cout << "\033[37;43;1m注意\033[0m：计算不成立！" << endl; 
             else 
             { 
@@ -117,11 +118,14 @@ void calc()
                     num2--; 
                 } 
             } 
-            cout << num1 << "^" << num2 << "=" << num3 << endl; 
+            cout << num1 << "^" << n << "=" << num3 << endl; 
         }
         //退出模块
         else if(o == 'c' || o == 'C')
-        break;
+		{
+			clear();
+			break;
+		}
         //报错模块
         else
         {
@@ -227,7 +231,10 @@ void D()
         cout << "输入任意键继续，输入“\033[1;33mc\033[0m”退出..." << endl;
         cin >> q;
         if (q == 'c' || q == 'C')
-        break;
+		{
+			clear();
+			break;
+		}
         else
         {
             cout << "--------------------" << endl;
