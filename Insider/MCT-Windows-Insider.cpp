@@ -4,7 +4,8 @@
 本程序是免费开源的，此源代码可以随便用。
 我允许任何人使用我的源代码进行扩充，编译等操作。但是一旦出现问题，我个人不承担任何责任。
 注：本人初二学生一枚，更新较慢，程序功能较少、Bug较多，请见谅。您如果愿意加入我，可电邮：FTS427@outlook.com，也可以关注我的B站账号：探索者FTS
-Github连接：https://github.com/FTS427/MathCentTools
+Github主仓库连接：https://github.com/FTS427/MathCentTools
+Github历史仓库连接：https://github.com/FTS427/MathCentTools-History
 */
 
 //注：此版本为Insider测试版，有不稳定功能
@@ -13,16 +14,8 @@ Github连接：https://github.com/FTS427/MathCentTools
 #include <cmath>
 using namespace std;
 
-//设置全局变量部分
+//全局变量
 char q;
-const char RED[100]{"\033[31m"};
-const char YELLOW[100]{"\033[33m"};
-const char BLUE[100]{"\033[m"};
-const char GREEN[100]{"\033[m"};
-const char TEAL[100]{"\033[m"};
-const char WHITE[100]{"\033[0m"};
-
-//以下是函数部分
 
 //clear函数，清屏
 void clear()
@@ -165,56 +158,42 @@ void B()
     }
 }
 
-//Ca函数,用于输入和判断
-void Ca()
-{
-    long int n3;
-    long double num5, num6;
-    while (1 > 0)
-    {
-        //循环体
-        cout << "请输入第一个数:" << endl;
-        cin >> num5;
-        cout << "请输入第二个数:" << endl;
-        cin >> num6;
-        if (num5 != int(num5) || num6 != int(num6))
-        ERROR();
-        else
-        break;
-    }
-    // 获取最大的数
-    n3 = (num5 > num6) ? num5 : num6;
-    while (1 > 0)
-    {
-        //循环体
-        if (n3 % int(num5) == 0 && n3 % int(num6) == 0)
-        {
-            cout << "这两个数的的最小公倍数是：" << n3 << endl;
-            break;
-        }
-        else
-		++n3;
-    }
-}
-
 //C函数,用于计算最小公倍数
 void C()
 {
     clear();
     cout << "欢迎使用最小公倍数功能！" << endl;
     cout << "\033[1;43;37m注意\033[0m：本功能只支持两个数之间的运算！" << endl;
-    //以上为函数的初始化
-    while (1 > 0)
+    cout << "输入任意值继续，输入“\033[33;1mc\033[0m”退出..."<< endl;
+    cin >> q;
+    while (q != 'c' || q != 'C')
     {
-        //循环体
-        cout << "输入任意值继续，输入“\033[33;1mc\033[0m”退出..."<< endl;
-        cin >> q;
-        if (q == 'c' || q == 'C')
-        break;
-        else
+        cout << "--------------------" << endl;
+        long int n3;
+        long double num5, num6;
+        while (1 > 0)
         {
-            cout << "--------------------" << endl;
-            Ca(); //调取运算部分函数'Cb'
+            cout << "请输入第一个数:" << endl;
+            cin >> num5;
+            cout << "请输入第二个数:" << endl;
+            cin >> num6;
+            if (num5 != int(num5) || num6 != int(num6))
+            ERROR();
+            else
+            break;
+        }
+        // 获取最大的数
+        n3 = (num5 > num6) ? num5 : num6;
+        while (1 > 0)
+        {
+            //循环体
+            if (n3 % int(num5) == 0 && n3 % int(num6) == 0)
+            {
+                cout << "这两个数的的最小公倍数是：" << n3 << endl;
+                break;
+            }
+            else
+		    ++n3;
         }
     }
 }
@@ -226,71 +205,62 @@ void D()
     long double x, a;
     cout << "欢迎使用数值分析器功能！" << endl;
     //函数初始化
-    while (true)
+    cout << "输入任意键继续，输入“\033[1;33mc\033[0m”退出..." << endl;
+    cin >> q;
+    while (q != 'c' || q != 'C')
     {
-        cout << "输入任意键继续，输入“\033[1;33mc\033[0m”退出..." << endl;
-        cin >> q;
-        if (q == 'c' || q == 'C')
-		{
-			clear();
-			break;
-		}
+        cout << "--------------------" << endl;
+        cout << "请输入一个数:" << endl;
+        cin >> x;
+        if (x == 0) //0的情况
+        {
+            cout << x << "是整数" << endl;
+            cout << x << "是正数" << endl;
+            cout << x << "是实数" << endl;
+            cout << x << "是不分质数合数" << endl;
+            cout << x << "是偶数" << endl;
+        }
         else
         {
-            cout << "--------------------" << endl;
-            cout << "请输入一个数:" << endl;
-            cin >> x;
-            if (x == 0) //0的情况
+            if (modf(x, &a) == 0.0)
+            cout << x << "是整数" << endl;
+            else
+            cout << x << "是分数" << endl;
+            if (x > 0)
+            cout << x << "是正数" << endl;
+            else
+            cout << x << "是负数" << endl;
+            if (x * x >= 0)
+            cout << x << "是实数" << endl;
+            else
+            cout << x << "是虚数" << endl;
+            if (x == 1)
+            cout << x << "是不分质数合数" << endl;
+            else
             {
-                cout << x << "是整数" << endl;
-                cout << x << "是正数" << endl;
-                cout << x << "是实数" << endl;
-                cout << x << "是不分质数合数" << endl;
+                if (int(x) % 3 == 0 || int(x) % 5 == 0 || int(x) % 2 == 0 || int(x) % 7 == 0 || int(x) % 11 == 0)
+                cout << x << "是合数" << endl;
+                else
+                cout << x << "是质数" << endl;
+            }
+            if (int(x) == x)
+            {
+                if (int(x) % 2 == 0)
                 cout << x << "是偶数" << endl;
+                else
+                cout << x << "是奇数" << endl;
             }
             else
             {
-                if (modf(x, &a) == 0.0)
-                cout << x << "是整数" << endl;
+                if (x/2 - int(x)/2 == 0)
+                cout << x << "是偶数" << endl;
                 else
-                cout << x << "是分数" << endl;
-                if (x > 0)
-                cout << x << "是正数" << endl;
-                else
-                cout << x << "是负数" << endl;
-                if (x * x >= 0)
-                cout << x << "是实数" << endl;
-                else
-                cout << x << "是虚数" << endl;
-                if (x == 1)
-                cout << x << "是不分质数合数" << endl;
-                else
-                {
-                    if (int(x) % 3 == 0 || int(x) % 5 == 0 || int(x) % 2 == 0 || int(x) % 7 == 0 || int(x) % 11 == 0)
-                    cout << x << "是合数" << endl;
-                    else
-                    cout << x << "是质数" << endl;
-                }
-                if (int(x) == x)
-                {
-                    if (int(x) % 2 == 0)
-                    cout << x << "是偶数" << endl;
-                    else
-                    cout << x << "是奇数" << endl;
-                }
-                else
-                {
-                    if (x/2 - int(x)/2 == 0)
-                    cout << x << "是偶数" << endl;
-                    else
-                    cout << x << "是奇数" << endl;
-                }
+                cout << x << "是奇数" << endl;
             }
         }
     }
 }
 
-/*
 //setting函数,用于设置（测试开发阶段）
 void setting()
 {
@@ -299,13 +269,12 @@ void setting()
 	cout << "设置" << endl;cout << endl;
     cout << "全局语言" << endl;
 	cout << "English = 1 , 简体中文 = 2";
-	cin >> a;
-	if(a == 1)
+	//cin >> a;
+	//if(a == 1)
 	//设成英文模式
-	if(a == 2)
+	//if(a == 2)
 	//中文
 }
-*/
 
 //M函数，用于简化主函数
 void M()
@@ -316,7 +285,7 @@ void M()
     while (true) //主循环
     {
         cout << "--------------------" << endl;
-        cout << "\033[34m计算器\033[1;34m(1)\033[0m，\033[35m最大公约数\033[35;1m(2)\033[0m，\033[36m最小公倍数\033[1;36m(3)\033[0m，\033[32m数值分析器\033[1;32m(4)，\033[1;33m退出(5)\033[0m" << endl;
+        cout << "\033[34m计算器\033[1;34m(1)\033[0m，\033[35m最大公约数\033[35;1m(2)\033[0m，\033[36m最小公倍数\033[1;36m(3)\033[0m，\033[32m数值分析器\033[1;32m(4)，版本(v)，\033[1;33m退出(5)\033[0m" << endl;
         cout << "请键入你所需的功能：";
         cin >> u;
         if (u == '1')
@@ -329,8 +298,10 @@ void M()
         D();
 		else if (u == '5')
 		break;
-		else if (u == 'v' || u == 'V')
-        cout << "MCT Insider v0.0.1.0 Beta01" << endl;
+		else if (u == '6')
+        setting();
+        else if (u == 'v' || u == 'V')
+        cout << "MCT Insider v0.0.1.0 Beta02" << endl;
         else
 		{
             clear();
@@ -343,7 +314,7 @@ void M()
 int main()
 {
     clear();
-	M(); //使用m函数
+	M(); //使用M函数
     clear();
 	return 0; //向系统报个0值
 }
