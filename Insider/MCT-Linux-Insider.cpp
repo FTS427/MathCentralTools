@@ -125,6 +125,9 @@ void calc()
 			ERROR();
         }
 	}
+    if (q == 'c' || q == 'C')
+    clear();
+    exit(0);
 }
 
 //B函数,用于计算最大公约数
