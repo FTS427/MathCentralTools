@@ -235,9 +235,15 @@ void D()
             cout << x << "是虚数" << endl;
             if (x == 1)
             cout << x << "是不分质数合数" << endl;
+            else if (int(x) - x != 0) 
+            cout << x << "是不分质数合数" << endl;
             else
             {
-                if (int(x) % 3 == 0 || int(x) % 5 == 0 || int(x) % 2 == 0 || int(x) % 7 == 0 || int(x) % 11 == 0)
+                int n=0, i;
+                for(i=2;i<x;i=i+1)
+                if(int(x)%1 == 0)
+                n=n+1;
+                if (n >0)
                 cout << x << "是合数" << endl;
                 else
                 cout << x << "是质数" << endl;
