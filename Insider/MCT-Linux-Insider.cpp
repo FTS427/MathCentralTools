@@ -4,17 +4,14 @@
 #include <cmath>
 using namespace std;
 
-//全局变量
 char q;
 const char 注意[100]={"\033[1;37;43m注意\033[0m"};
 
-//clear函数，清屏
 void clear()
 {
     system("clear");
 }
 
-//ERROR函数，报错
 void ERROR()
 {
 	cout << "\033[37;43;1mERROR!\033[0m" << endl;
@@ -25,9 +22,14 @@ void h1()
     cout << "--------------------" << endl;
 }
 
-int h2()
+void h2()
 {
-    cout << "====================" << endl;
+    cout << "*==================*" << endl;
+}
+
+void s(const char a[])
+{
+    cout << " - " << a << endl;
 }
 
 //calc函数,计算器
@@ -39,8 +41,7 @@ void calc()
     long double num3;
     cout << "欢迎使用计算器功能！" << endl;
     cout << 注意 << "：现仅只支持两个数之间的运算！" << endl;
-    //函数预处理
-    cout << "输入任意值继续，输入“\033[33;1mc\033[0m”退出..." << endl;
+    cout << "输入任意值继续，输入“\033[33;1m0c0\033[0m”退出..." << endl;
     cin >> q;
 	while (q != 'c' || q != 'C')
     {
@@ -82,7 +83,7 @@ void calc()
             cout << num1 << "^" << n << "=" << num3 << endl; 
         }
         //退出模块
-        else if(o == 'c' || o == 'C')
+        else if(o == 'c' && num1 == 0 && num2 ==0)
 		{
 			clear();
 			break;
@@ -151,7 +152,7 @@ void C()
             cout << "请输入第二个数:" << endl;
             cin >> num6;
             if (num5 != int(num5) || num6 != int(num6))
-            ERROR();
+                ERROR();
             else
             break;
         }
@@ -166,7 +167,7 @@ void C()
                 break;
             }
             else
-		    ++n3;
+		        ++n3;
         }
     }
 }
@@ -196,45 +197,45 @@ void D()
         else
         {
             if (modf(x, &a) == 0.0)
-            cout << x << "是整数" << endl;
+                cout << x << "是整数" << endl;
             else
-            cout << x << "是分数" << endl;
+                cout << x << "是分数" << endl;
             if (x > 0)
-            cout << x << "是正数" << endl;
+                cout << x << "是正数" << endl;
             else
-            cout << x << "是负数" << endl;
+                cout << x << "是负数" << endl;
             if (x * x >= 0)
-            cout << x << "是实数" << endl;
+                cout << x << "是实数" << endl;
             else
-            cout << x << "是虚数" << endl;
+                cout << x << "是虚数" << endl;
             if (x == 1)
-            cout << x << "是不分质数合数" << endl;
+                cout << x << "是不分质数合数" << endl;
             else if (int(x) - x != 0) 
-            cout << x << "是不分质数合数" << endl;
+                cout << x << "是不分质数合数" << endl;
             else
             {
                 int n=0, i;
                 for(i=2;i<x;i=i+1)
                 if(int(x)%1 == 0)
-                n=n+1;
+                    n=n+1;
                 if (n >0)
-                cout << x << "是合数" << endl;
+                    cout << x << "是合数" << endl;
                 else
-                cout << x << "是质数" << endl;
+                    cout << x << "是质数" << endl;
             }
             if (int(x) == x)
             {
                 if (int(x) % 2 == 0)
-                cout << x << "是偶数" << endl;
+                    cout << x << "是偶数" << endl;
                 else
-                cout << x << "是奇数" << endl;
+                    cout << x << "是奇数" << endl;
             }
             else
             {
                 if (x/2 - int(x)/2 == 0)
-                cout << x << "是偶数" << endl;
+                    cout << x << "是偶数" << endl;
                 else
-                cout << x << "是奇数" << endl;
+                    cout << x << "是奇数" << endl;
             }
         }
     }
@@ -259,31 +260,32 @@ void setting()
 void M()
 {
     cout << "\033[1;33m欢迎使用集成数学工具!\033[0m" << endl;
-    char u;
-    while (true) //主循环
+    char u[8];
+    while (true)
     {
         h1();
-        cout << "\033[34m计算器\033[1;34m(1)\033[0m，\033[35m最大公约数\033[35;1m(2)\033[0m，\033[36m最小公倍数\033[1;36m(3)\033[0m，\033[32m数值分析器\033[1;32m(4)\033[0m，关于(a)，\033[1;33m退出(q)\033[0m" << endl;
+        cout << "\033[34m计算器\033[1;34m(1)\033[0m，\033[35m最大公约数\033[35;1m(2)\033[0m，\033[36m最小公倍数\033[1;36m(3)\033[0m，\033[32m数值分析器\033[1;32m(4)\033[0m，关于(a)，\033[1;33m退出(e)\033[0m" << endl;
         cout << "请键入你所需的功能：";
-        cin >> u;
-        if (u == '1')
-        calc();
-        else if (u == '2')
-        B();
-        else if (u == '3')
-        C();
-        else if (u == '4')
-        D();
-		else if (u == 'q' || u == 'Q')
-		break;
-		else if (u == '6')
-        setting();
-        else if (u == 'a' || u == 'A')
+        cin >> u[1] ;
+        if (u[1] == '1')
+            calc();
+        else if (u[1] == '2')
+            B();
+        else if (u[1] == '3')
+            C();
+        else if (u[1] == '4')
+            D();
+		else if (u[1] == 'E' || u[1] == 'e')
+		    break;
+		else if (u[1] == '6')
+            setting();
+        else if (u[1] == 'A'  || u[1] == 'a' )
         {
+            clear();
             h2();
-            cout << "MCT Insider v0.0.1.0 Beta02" << endl;
-            cout << "Made by FTS427" << endl;
-            cout << "Github : https://github.com/FTS427/MathCentTools" << endl;
+            s("MCT Insider v0.0.1.0 Beta03");
+            s("Made by FTS427");
+            s("Github : https://github.com/FTS427/MathCentTools");
             h2();
         }
         else
