@@ -12,24 +12,40 @@ void clear()
     system("clear");
 }
 
+void print(const char a[], int i)
+{
+    if(i == 0)
+        cout << a ;
+    else if(i == 1)
+        cout << a << endl;
+    else
+        cout << "Code includes BUG!" << endl;
+}
+
 void ERROR()
 {
-	cout << "\033[37;43;1mERROR!\033[0m" << endl;
+	clear();
+    print("\033[37;43;1mERROR!\033[0m",1);
 }
 
 void h1()
 {
-    cout << "--------------------" << endl;
+    print("--------------------",1);
 }
 
 void h2()
 {
-    cout << "*==================*" << endl;
+    print("*==================*",1);
 }
 
 void s(const char a[])
 {
     cout << " - " << a << endl;
+}
+
+void h(const char a[])
+{
+    cout << "欢迎使用" << a << "功能！" << endl;
 }
 
 //calc函数,计算器
@@ -39,38 +55,38 @@ void calc()
     char o;
     long int num1, num2;
     long double num3;
-    cout << "欢迎使用计算器功能！" << endl;
-    cout << 注意 << "：现仅只支持两个数之间的运算！" << endl;
-    cout << "输入任意值继续，输入“\033[33;1m0c0\033[0m”退出..." << endl;
+    h("计算器");
+    print(注意 + "：现仅只支持两个数之间的运算！",1);
+    print("输入任意值继续，输入“\033[33;1m0c0\033[0m”退出...",1);
     cin >> q;
 	while (q != 'c' || q != 'C')
     {
         h1();
-        cout << "请输入计算式" << endl;
+        print("请输入计算式",1);
         cin >> num1 >> o >> num2;
         //加法模块
         if (o == '+')
-        cout << num1 << "+" << num2 << "=" << num1 + num2 << endl;
+            cout << num1 << "+" << num2 << "=" << num1 + num2 << endl;
         //减法模块
         else if (o == '-')
-        cout << num1 << "-" << num2 << "=" << num1 - num2 << endl;
+            cout << num1 << "-" << num2 << "=" << num1 - num2 << endl;
         //乘法模块
         else if (o == '*')
-        cout << num1 << "*" << num2 << "=" << num1 * num2 << endl;
+            cout << num1 << "*" << num2 << "=" << num1 * num2 << endl;
         //除法模块
         else if (o == '/')
         {
             if (num2 == 0)
-            cout << 注意 << "：计算不成立！" << endl;
+                ERROR();
             else
-            cout << num1 << "/" << num2 << "=" << num1/num2 << endl;
+                cout << num1 << "/" << num2 << "=" << num1/num2 << endl;
         }
         //乘方模块
         else if (o == '^') 
         {
             long int n=num2;
 			if (num1 == 0 && num2 == 0) 
-            cout << "\033[37;43;1m注意\033[0m：计算不成立！" << endl; 
+                ERROR(); 
             else 
             { 
                 num3 = 1; 
@@ -90,10 +106,7 @@ void calc()
 		}
         //报错模块
         else
-        {
-			clear();
 			ERROR();
-        }
 	}
     if (q == 'c' || q == 'C')
     {
@@ -107,10 +120,9 @@ void B()
 {
     clear();
     long double num3, num4;
-    cout << "欢迎使用最大公约数功能！" << endl;
-    cout << "\033[1;43;37m注意\033[0m：本功能只支持两个数之间的运算！" << endl;
-    //初始化部分
-    cout << "输入任意值继续，输入“\033[33;1mc\033[0m”退出..." << endl;
+    h(最大公约数功能！);
+    print("\033[1;43;37m注意\033[0m：本功能只支持两个数之间的运算！",1);
+    print("输入任意值继续，输入“\033[33;1mc\033[0m”退出...",1);
     cin >> q;
     while (q != 'c' || q != 'C')
     {
@@ -136,9 +148,9 @@ void B()
 void C()
 {
     clear();
-    cout << "欢迎使用最小公倍数功能！" << endl;
-    cout << "\033[1;43;37m注意\033[0m：本功能只支持两个数之间的运算！" << endl;
-    cout << "输入任意值继续，输入“\033[33;1mc\033[0m”退出..."<< endl;
+    h("最小公倍数");
+    print("\033[1;43;37m注意\033[0m：本功能只支持两个数之间的运算!");
+    print("输入任意值继续，输入“\033[33;1mc\033[0m”退出...");
     cin >> q;
     while (q != 'c' || q != 'C')
     {
@@ -178,7 +190,6 @@ void D()
     clear();
     long double x, a;
     cout << "欢迎使用数值分析器功能！" << endl;
-    //函数初始化
     cout << "输入任意键继续，输入“\033[1;33mc\033[0m”退出..." << endl;
     cin >> q;
     while (q != 'c' || q != 'C')
@@ -259,27 +270,27 @@ void setting()
 //M函数，用于简化主函数
 void M()
 {
-    cout << "\033[1;33m欢迎使用集成数学工具!\033[0m" << endl;
-    char u[8];
+    h("集成数学工具!");
+    char u;
     while (true)
     {
         h1();
         cout << "\033[34m计算器\033[1;34m(1)\033[0m，\033[35m最大公约数\033[35;1m(2)\033[0m，\033[36m最小公倍数\033[1;36m(3)\033[0m，\033[32m数值分析器\033[1;32m(4)\033[0m，关于(a)，\033[1;33m退出(e)\033[0m" << endl;
         cout << "请键入你所需的功能：";
-        cin >> u[1] ;
-        if (u[1] == '1')
+        cin >> u;
+        if (u == '1')
             calc();
-        else if (u[1] == '2')
+        else if (u == '2')
             B();
-        else if (u[1] == '3')
+        else if (u == '3')
             C();
-        else if (u[1] == '4')
+        else if (u == '4')
             D();
-		else if (u[1] == 'E' || u[1] == 'e')
+		else if (u == 'E' || u == 'e')
 		    break;
-		else if (u[1] == '6')
+		else if (u == '6')
             setting();
-        else if (u[1] == 'A'  || u[1] == 'a' )
+        else if (u == 'A'  || u == 'a' )
         {
             clear();
             h2();
@@ -289,10 +300,7 @@ void M()
             h2();
         }
         else
-		{
-            clear();
             ERROR();
-        }
     }
 }
 
