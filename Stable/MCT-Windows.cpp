@@ -1,6 +1,4 @@
-﻿//此版本为Insider测试版，有不稳定功能
-
-#include <iostream>
+﻿#include <iostream>
 #include <cmath>
 using namespace std;
 
@@ -289,7 +287,7 @@ void M()
         {
             clear();
             h2();
-            s("MCT Insider v0.0.1.0 Beta03");
+            s("MCT Stable v0.0.1.0");
             s("Made by FTS427");
             s("Github : https://github.com/FTS427/MathCentTools");
             h2();
