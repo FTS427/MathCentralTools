@@ -306,7 +306,7 @@ void M()
         {
             clear();
             h2();
-            s("MCT Insider v0.0.1.0 Beta03");
+            s("MCT Insider v0.0.1.0 Beta04");
             s("Made by FTS427");
             s("Github : https://github.com/FTS427/MathCentTools");
             h2();
