@@ -11,7 +11,7 @@ void clear()
     system("clear");
 }
 
-void print(const char a[], int i)
+void print(const char a[],int i)
 {
     if(i == 0)
         cout << a ;
