@@ -176,7 +176,6 @@ void C()
                 else
                     break;
             }
-            // 获取最大的数
             n3 = (num5 > num6) ? num5 : num6;
             while (true)
             {
@@ -213,7 +212,7 @@ void D()
         {
             print("请输入一个数:",0);
             cin >> x;
-            if (x == 0) //0的情况
+            if (x == 0)
             {
                 cout << x << "是整数" << endl;
                 cout << x << "是正数" << endl;
@@ -264,30 +263,20 @@ void D()
     }
 }
 
-//setting函数,用于设置（测试开发阶段）
-void setting()
-{
-    clear();
-	int a;
-	cout << "设置" << endl;cout << endl;
-    cout << "全局语言" << endl;
-	cout << "English = 1 , 简体中文 = 2" << endl;
-	//cin >> a;
-	//if(a == 1)
-	//设成英文模式
-	//if(a == 2)
-	//中文
-}
-
 //M函数，用于简化主函数
 void M()
 {
     h("集成数学工具");
     char u;
-    while (true)
+    while(true)
     {
         h1();
-        print("\033[34m计算器\033[1;34m(1)\033[0m，\033[35m最大公约数\033[35;1m(2)\033[0m，\033[36m最小公倍数\033[1;36m(3)\033[0m，\033[32m数值分析器\033[1;32m(4)\033[0m，关于(a)，\033[1;33m退出(e)\033[0m",1);
+        print("\033[34m计算器\033[1;34m(1)\033[0m",1);
+        print("\033[35m最大公约数\033[35;1m(2)\033[0m",1);
+        print("\033[36m最小公倍数\033[1;36m(3)\033[0m",1);
+        print("\033[32m数值分析器\033[1;32m(4)\033[0m",1);
+        print("关于(a)",1);
+        print("\033[1;33m退出(e)\033[0m",1);
         print("请键入所需功能：",0);
         cin >> u;
         if (u == '1')
@@ -300,8 +289,6 @@ void M()
             D();
 		else if (u == 'E' || u == 'e')
 		    break;
-		else if (u == '6')
-            setting();
         else if (u == 'A'  || u == 'a' )
         {
             clear();
