@@ -11,7 +11,7 @@ void clear()
     system("CLS");
 }
 
-void print(const char a[], int i)
+void print(const char a[],int i)
 {
     if(i == 0)
         cout << a ;
@@ -62,16 +62,16 @@ void calc()
         print("请输入计算式(+ - * / ^),输入'0c0'退出",1);
         print("如: 1+1",1);
         cin >> num1 >> o >> num2;
-        //加法模块
+        //加法
         if (o == '+')
             cout << num1 << "+" << num2 << "=" << num1 + num2 << endl;
-        //减法模块
+        //减法
         else if (o == '-')
             cout << num1 << "-" << num2 << "=" << num1 - num2 << endl;
-        //乘法模块
+        //乘法
         else if (o == '*')
             cout << num1 << "*" << num2 << "=" << num1 * num2 << endl;
-        //除法模块
+        //除法
         else if (o == '/')
         {
             if (num2 == 0)
@@ -79,7 +79,7 @@ void calc()
             else
                 cout << num1 << "/" << num2 << "=" << num1/num2 << endl;
         }
-        //乘方模块
+        //乘方
         else if (o == '^') 
         {
             long int n=num2;
@@ -96,19 +96,19 @@ void calc()
             } 
             cout << num1 << "^" << n << "=" << num3 << endl; 
         }
-        //退出模块
+        //退出
         else if(o == 'c' && num1 == 0 && num2 ==0)
         {
             clear();
             break;
         }
-        //报错模块
+        //报错
         else
 			ERROR();
 	}
 }
 
-//B函数,用于计算最大公约数
+//B函数,计算最大公约数
 void B()
 {
     clear();
@@ -145,7 +145,7 @@ void B()
     }
 }
 
-//C函数,用于计算最小公倍数
+//C函数,计算最小公倍数
 void C()
 {
     clear();
@@ -176,7 +176,6 @@ void C()
                 else
                     break;
             }
-            // 获取最大的数
             n3 = (num5 > num6) ? num5 : num6;
             while (true)
             {
@@ -213,7 +212,7 @@ void D()
         {
             print("请输入一个数:",0);
             cin >> x;
-            if (x == 0) //0的情况
+            if (x == 0)
             {
                 cout << x << "是整数" << endl;
                 cout << x << "是正数" << endl;
@@ -264,30 +263,20 @@ void D()
     }
 }
 
-//setting函数,用于设置（测试开发阶段）
-void setting()
-{
-    clear();
-	int a;
-	cout << "设置" << endl;cout << endl;
-    cout << "全局语言" << endl;
-	cout << "English = 1 , 简体中文 = 2" << endl;
-	//cin >> a;
-	//if(a == 1)
-	//设成英文模式
-	//if(a == 2)
-	//中文
-}
-
-//M函数，用于简化主函数
+//M函数,简化主函数
 void M()
 {
     h("集成数学工具");
     char u;
-    while (true)
+    while(true)
     {
         h1();
-        print("\033[34m计算器\033[1;34m(1)\033[0m，\033[35m最大公约数\033[35;1m(2)\033[0m，\033[36m最小公倍数\033[1;36m(3)\033[0m，\033[32m数值分析器\033[1;32m(4)\033[0m，关于(a)，\033[1;33m退出(e)\033[0m",1);
+        s("\033[1;34m(1)\033[34m计算器\033[0m");
+        s("\033[35;1m(2)\033[35m最大公约数\033[0m");
+        s("\033[1;36m(3)\033[36m最小公倍数\033[0m");
+        s("\033[1;32m(4)\033[32m数值分析器\033[0m");
+        s("\033[0m(a)关于\033[0m");
+        s("\033[1;33m(e)退出\033[0m");
         print("请键入所需功能：",0);
         cin >> u;
         if (u == '1')
@@ -300,13 +289,11 @@ void M()
             D();
 		else if (u == 'E' || u == 'e')
 		    break;
-		else if (u == '6')
-            setting();
         else if (u == 'A'  || u == 'a' )
         {
             clear();
             h2();
-            s("MCT Insider v0.0.1.0 Beta03");
+            s("MCT Insider v0.0.1.1 Alpha");
             s("Made by FTS427");
             s("Github : https://github.com/FTS427/MathCentTools");
             h2();
