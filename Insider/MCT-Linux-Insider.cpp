@@ -8,7 +8,7 @@ char q;
 
 void clear()
 {
-    system("CLS");
+    system("clear");
 }
 
 void print(const char a[],int i)
@@ -263,6 +263,26 @@ void D()
     }
 }
 
+void E() //E函数,几何计算
+{
+    h("几何计算");
+    while(true)
+    {
+        h1();
+        print("输入任意键继续，输入“\033[1;33mc\033[0m”退出...",1);
+        cin >> q;
+        if (q == 'c' || q == 'C')
+        {
+            clear();
+            break;
+        }
+        else
+        {
+            //矩形 梯形 三角形 圆 面积,周长,体积
+        }
+    }
+}
+
 //M函数,简化主函数
 void M()
 {
@@ -293,7 +313,7 @@ void M()
         {
             clear();
             h2();
-            s("MCT Insider v0.0.1.1 Alpha");
+            s("MCT Insider v0.0.1.2 Alpha");
             s("Made by FTS427");
             s("Github : https://github.com/FTS427/MathCentTools");
             h2();

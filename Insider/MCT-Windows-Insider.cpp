@@ -8,7 +8,7 @@ char q;
 
 void clear()
 {
-    system("clear");
+    system("CLS");
 }
 
 void print(const char a[],int i)
