@@ -1,5 +1,10 @@
-数学集成工具（MathCentralTools）
-===
+<div align="center">
+    <img width="175" src="/other/icon/MCT.png"></img>
+</div>
+
+<h1 align="center">MathCentralTools</h1>
+
+<div align="center">
 
 ![下载](https://img.shields.io/github/downloads/FTS427/MathCentralTools/total?logo=github&label=下载&style=for-the-badge&color=44cc11)
 ![星标](https://img.shields.io/github/stars/FTS427/MathCentralTools?logo=github&label=星标&style=for-the-badge)
@@ -16,6 +21,8 @@
 ![QQ](https://img.shields.io/badge/qq-2783629533-B0C4DE?style=for-the-badge&logoColor=white)
 ![Bilibili](https://img.shields.io/badge/Bilibili-探索者FTS-FFC0CB?style=for-the-badge&logo=bilibili&logoColor=white)
 ![信息](https://repobeats.axiom.co/api/embed/cc935f853d439a32eda4eca113063598a914889a.svg "仓库情况图")
+
+</div>
 
 ## 📃介绍
 
