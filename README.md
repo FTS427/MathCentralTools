@@ -6,7 +6,7 @@
 ![协议](https://img.shields.io/github/license/FTS427/MathCentralTools?logo=github&label=协议&style=for-the-badge&color=ff7a35)
 ![版本](https://img.shields.io/github/v/tag/FTS427/MathCentralTools?label=版本&style=for-the-badge "版本")
 ![邮箱](https://img.shields.io/badge/%20邮箱-fts427%40outlook.com-%2357728B?style=for-the-badge)
-![Alt](https://repobeats.axiom.co/api/embed/cc935f853d439a32eda4eca113063598a914889a.svg "Repobeats analytics image")
+![信息](https://repobeats.axiom.co/api/embed/cc935f853d439a32eda4eca113063598a914889a.svg "仓库情况图")
 
 ## 📃介绍
 
