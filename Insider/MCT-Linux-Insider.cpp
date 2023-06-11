@@ -292,9 +292,10 @@ void M()
     {
         h1();
         s("\033[1;34m(1)\033[34m计算器\033[0m");
-        s("\033[35;1m(2)\033[35m最大公约数\033[0m");
+        s("\033[1;35m(2)\033[35m最大公约数\033[0m");
         s("\033[1;36m(3)\033[36m最小公倍数\033[0m");
         s("\033[1;32m(4)\033[32m数值分析器\033[0m");
+        s("\033[1;33m(5)\033[33m几何\033[0m");
         s("\033[0m(a)关于\033[0m");
         s("\033[1;33m(e)退出\033[0m");
         print("请键入所需功能：",0);
@@ -307,6 +308,8 @@ void M()
             C();
         else if (u == '4')
             D();
+        else if (u == '5')
+            E();
 		else if (u == 'E' || u == 'e')
 		    break;
         else if (u == 'A'  || u == 'a' )
@@ -315,7 +318,7 @@ void M()
             h2();
             s("MCT Insider v0.0.1.2 Alpha");
             s("Made by FTS427");
-            s("Github : https://github.com/FTS427/MathCentTools");
+            s("Github : https://github.com/FTS427/MathCentralTools");
             h2();
         }
         else
